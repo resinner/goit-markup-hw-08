@@ -1,0 +1,23 @@
+.close-btn {
+  background-color: transparent;
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: color var(--anim1);
+
+  &:hover {
+    color: var(--dark-accent);
+  }
+}
+
+.modal-close-icon {
+  fill: currentColor;
+}

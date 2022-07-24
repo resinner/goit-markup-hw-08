@@ -1,0 +1,45 @@
+.nav-link a:hover,
+.nav-link a:focus,
+.footer-list-link:hover,
+.footer-list-link:focus,
+.footer-list-address-link:hover,
+.footer-list-address-link:focus {
+  color: var(--dark-accent);
+}
+
+.nav-link a {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+  color: var(--dark-text);
+  display: flex;
+
+  transition: color var(--anim1);
+}
+
+li.nav-link:not(:last-child) {
+  margin-right: 50px;
+}
+
+.nav-link-active a {
+  position: relative;
+  color: var(--dark-accent);
+}
+
+.nav-link-active a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  transform: translateY(32px);
+
+  width: 100%;
+  height: 4px;
+  display: inline-block;
+  margin-right: 10px;
+
+  background-color: var(--dark-accent);
+  border-radius: 2px;
+}

@@ -1,0 +1,58 @@
+.form-checkbox {
+  display: flex;
+}
+
+.form-custom-checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 16px;
+  height: 16px;
+  outline: 2px solid var(--dark);
+  outline-offset: -2px;
+  border-radius: 2px;
+  transition: outline-color var(--anim1), fill var(--anim1), background-color var(--anim1);
+}
+
+.form-custom-checkbox svg {
+  fill: var(--main);
+}
+
+.form-custom-checkbox:hover {
+  outline-color: var(--accent);
+}
+
+.form-checkbox input:checked + .form-custom-checkbox {
+  background-color: var(--accent);
+  outline-color: var(--accent);
+}
+
+.form-checkbox input:checked + .form-custom-checkbox svg {
+  fill: var(--main);
+}
+
+.form-checkbox input:checked + .form-custom-checkbox:hover {
+  background-color: var(--main);
+}
+
+.form-checkbox input:checked + .form-custom-checkbox:hover svg {
+  fill: var(--accent);
+}
+
+.form-checkbox input {
+  width: 0;
+  height: 0;
+  transition: outline-color var(--anim1), fill var(--anim1), background-color var(--anim1);
+}
+
+.form-checkbox-lable {
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  color: var(--second-text-color);
+  padding-left: 8px;
+}
+
+.submit-check-agree {
+  color: var(--dark-accent);
+}
