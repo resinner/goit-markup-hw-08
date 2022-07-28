@@ -5,20 +5,30 @@
 
 .logo {
   font-weight: 700;
-  font-size: 26px;
+  font-size: 24px;
   line-height: 1.16;
   letter-spacing: 0.03em;
   color: var(--dark-accent);
-  
+
+  @media screen and (min-width: 1200px) {
+    font-size: 28px;
+  }
+
   &__accent-header {
     color: var(--dark-text);
   }
-  
+
   &__accent-footer {
     color: var(--main);
   }
 }
 
 .logoWrapper {
-  margin-right: 94px;
+  @media screen and (min-width: 768px) {
+    margin-right: 88px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    margin-right: 94px;
+  }
 }

@@ -12,7 +12,6 @@
         integrity="sha512-wpPYUAdjBVSE4KJnH1VR1HeZfpl1ub8YT/NKx4PuQ5NmX2tKuGu6U/JRp5y+Y8XG2tV+wKQpNHVUX03MfMFn9Q=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./css/main.min.css">
-    <link rel="stylesheet" href="./css/style.css">
 
 </head>
 
@@ -21,11 +20,63 @@
     <header class="section-header">
         <div class="container header-container">
             <div class="logoWrapper">
-                <a class=" logo link" href="./index.html">
+                <a class=" logo link" href="./index.html" aria-label="Логотип WebStudio">
                     Web<span class="logo__accent-header">Studio</span>
                 </a>
             </div>
-            <nav>
+            <!-- Мобільне меню -->
+            <button class="mobile-menu-btn" type="button" data-menu-button>
+                <svg class="mobile-menu-icon" width="24px" height="16px">
+                    <use class="mobile-menu-close" href="./images/icons.svg#icon-close-menu"></use>
+                    <use class="mobile-menu-burger" href="./images/icons.svg#icon-menu"></use>
+                </svg>
+            </button>
+
+
+            <div class="mobile-menu" data-menu>
+                <ul class="mobile-menu-nav list">
+                    <li class="mobile-menu-nav-item">
+                        <a class="link mobile-menu-nav-current" href="./index.html" target="_blank"
+                            rel="noopener no-referrer">Студия</a>
+                    </li>
+                    <li class="mobile-menu-nav-item">
+                        <a class="link" href="./portfolio.html" target="_blank" rel="noopener no-referrer">Портфолио</a>
+                    </li>
+                    <li class="mobile-menu-nav-item">
+                        <a class="link" href="#" target="_blank" rel="noopener no-referrer">Контакты</a>
+                    </li>
+                </ul>
+                <ul class="mobile-menu-contacts list">
+                    <li class="mobile-menu-contacts-item">
+                        <a class="mobile-menu-contacts-link accent link" href="tel:+380961111111" target="_blank"
+                            rel="noopener no-referrer">+38 096 111 11 11</a>
+                    </li>
+                    <li class="mobile-menu-contacts-item">
+                        <a class="mobile-menu-contacts-link link" href="mailto:info@devstudio.com" target="_blank"
+                            rel="noopener no-referrer">info@devstudio.com</a>
+                    </li>
+                </ul>
+                <ul class="mobile-menu-socials list">
+                    <li class="mobile-menu-social-item">
+                        <a class="mobile-menu-social-link link" href="#" target="_blank"
+                            rel="noopener no-referrer">Instagram</a>
+                    </li>
+                    <li class="mobile-menu-social-item">
+                        <a class="mobile-menu-social-link link" href="#" target="_blank"
+                            rel="noopener no-referrer">Twitter</a>
+                    </li>
+                    <li class="mobile-menu-social-item">
+                        <a class="mobile-menu-social-link link" href="#" target="_blank"
+                            rel="noopener no-referrer">Facebook</a>
+                    </li>
+                    <li class="mobile-menu-social-item">
+                        <a class="mobile-menu-social-link link" href="#" target="_blank"
+                            rel="noopener no-referrer">LinkedIn</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- Навігація сайту -->
+            <nav class="nav">
                 <ul class="flex-position list">
                     <li class="nav-link link nav-link-active"><a class="" href="./index.html">Студия</a></li>
                     <li class="nav-link link"><a href="./portfolio.html">Портфолио</a></li>
@@ -47,8 +98,10 @@
                 </li>
             </ul>
         </div>
+        </div>
     </header>
     <main>
+
         <!-- Секция 1 Hero -->
         <section class="hero section hero-overlay">
             <div class="container">
@@ -56,27 +109,28 @@
                 <button class="hero-button button" data-modal-open type="button">Заказать услугу</button>
             </div>
         </section>
+
         <!-- Секция Future -->
         <section class="features section">
             <div class="container">
                 <h2 class="visually-hidden">Особенности</h2>
-                <ul class="features-list list">
-                    <li class="features-item ">
+                <ul class="features-list list card-set">
+                    <li class="features-item card-set__item">
                         <h3 class="features__title">Внимание к деталям</h3>
                         <p class="features__description">Идейные соображения, а также начало повседневной работы по
                             формированию позиции.</p>
                     </li>
-                    <li class="features-item">
+                    <li class="features-item card-set__item">
                         <h3 class="features__title">Пунктуальность</h3>
                         <p class="features__description">Задача организации, в особенности же рамки и место обучения
                             кадров влечет за собой.</p>
                     </li>
-                    <li class="features-item">
+                    <li class="features-item card-set__item">
                         <h3 class="features__title">Планирование</h3>
                         <p class="features__description">Равным образом консультация с широким активом в
                             значительной степени обуславливает.</p>
                     </li>
-                    <li class="features-item">
+                    <li class="features-item card-set__item">
                         <h3 class="features__title">Современные технологии</h3>
                         <p class="features__description">Значимость этих проблем настолько очевидна, что реализация
                             плановых заданий.</p>
@@ -85,21 +139,21 @@
             </div>
         </section>
         <!-- Секция Our-work -->
-        <section class="section">
+        <section class="section our-work">
             <div class="container">
                 <h2 class="section-title">Чем мы занимаемся</h2>
                 <ul class="flex-position list">
-                    <li class="our-work-item"><img src="./images/about-us/img.jpg" alt="Программное-обеспечение"
+                    <li class="our-work__item"><img src="./images/about-us/img1-lr.jpg" alt="Программное-обеспечение"
                             width="370" height="294" />
-                        <p class="our-work-desc">Десктопные приложения</p>
+                        <p class="our-work__desc">Десктопные приложения</p>
                     </li>
-                    <li class="our-work-item"><img src="./images/about-us/img(1).jpg" alt="Мобильные-приложения"
+                    <li class="our-work__item"><img src="./images/about-us/img2-lr.jpg" alt="Мобильные-приложения"
                             width="370" height="294" />
-                        <p class="our-work-desc">Мобильные приложения</p>
+                        <p class="our-work__desc">Мобильные приложения</p>
                     </li>
-                    <li class="our-work-item"><img src="./images/about-us/img(2).jpg" alt="Дизайнерские-решения"
+                    <li class="our-work__item"><img src="./images/about-us/img3-lr.jpg" alt="Дизайнерские-решения"
                             width="370" height="294" />
-                        <p class="our-work-desc">Дизайнерские решения</p>
+                        <p class="our-work__desc">Дизайнерские решения</p>
                     </li>
                 </ul>
             </div>
@@ -108,9 +162,49 @@
         <section class="our-team section">
             <div class="container">
                 <h2 class="section-title">Наша команда</h2>
-                <ul class="flex-position list">
-                    <li class="team-list-item ">
-                        <img src="./images/team/team-player.jpg" alt="Игорь-Демьяненко" width="270" height="260" />
+                <ul class="list card-set team-list">
+                    <li class="team-list-item card-set__item">
+                        <!-- <img 
+                        class="team-avatar"
+                        srcset="
+                        ./images/team/w/img1-270.jpg 270w,
+                        ./images/team/w/img1-354.jpg 354w,
+                        ./images/team/w/img1-450.jpg 450w,
+                        ./images/team/w/img1-540.jpg 540w,
+                        ./images/team/w/img1-708.jpg 708w,
+                        ./images/team/w/img1-900.jpg 900w"
+                        sizes="(min-width: 1200px) 270px, (min-width: 768px) 354px, (max-width: 767px) 450 px, 100vw"
+                        src="./images/team/team-player.jpg" 
+                        alt="Игорь-Демьяненко" 
+                        width="450" 
+                        height="460" /> -->
+                        <picture>
+                            <source media="(min-width: 1200px)"
+                                srcset="./images/team/team-player1-lr.webp 1x, ./images/team/team-player1-lr@2x.webp 2x"
+                                type="image/webp">
+
+                            <source media="(min-width: 1200px)"
+                                srcset="./images/team/team-player1-lr.jpg 1x, ./images/team/team-player1-lr@2x.jpg 2x"
+                                type="image/jpg">
+
+                            <source media="(min-width: 768px)"
+                                srcset="./images/team/team-player1-md.webp, ./images/team/team-player1-md@2x.webp 2x"
+                                type="image/webp">
+
+                            <source media="(min-width: 768px)"
+                                srcset="./images/team/team-player1-md.jpg, ./images/team/team-player1-md@2x.jpg 2x"
+                                type="image/jpg">
+
+                            <source media="(max-width: 767px)"
+                                srcset="./images/team/team-player1-sm.webp 1x, ./images/team/team-player1-sm@2x.webp 2x"
+                                type="image/webp">
+
+                            <source media="(max-width: 767px)"
+                                srcset="./images/team/team-player1-sm.jpg 1x, ./images/team/team-player1-sm@2x.jpg 2x"
+                                type="image/jpg">
+                            <img src="./images/team/team-player1-sm.jpg" alt="Игорь-Демьяненко" width="450"
+                                height="460" />
+                        </picture>
                         <div class="team-member-description">
                             <h3 class="team-member-title">Игорь Демьяненко</h3>
                             <p class="team-member-position" lang="eu">Product Designer</p>
@@ -150,8 +244,35 @@
                             </ul>
                         </div>
                     </li>
-                    <li class="team-list-item">
-                        <img src="./images/team/team-player(1).jpg" alt="Ольга-Репина" width="270" height="260" />
+                    <li class="team-list-item card-set__item">
+                        <picture>
+
+                            <source media="(min-width: 1200px)"
+                                srcset="./images/team/team-player2-lr.webp 1x, ./images/team/team-player2-lr@2x.webp 2x"
+                                type="image/webp">
+
+                            <source media="(min-width: 1200px)"
+                                srcset="./images/team/team-player2-lr.jpg 1x, ./images/team/team-player2-lr@2x.jpg 2x"
+                                type="image/jpg">
+
+                            <source media="(min-width: 768px)"
+                                srcset="./images/team/team-player2-md.webp, ./images/team/team-player2-md@2x.webp 2x"
+                                type="image/webp">
+
+                            <source media="(min-width: 768px)"
+                                srcset="./images/team/team-player2-md.jpg, ./images/team/team-player2-md@2x.jpg 2x"
+                                type="image/jpg">
+
+                            <source media="(max-width: 767px)"
+                                srcset="./images/team/team-player2-sm.webp 1x, ./images/team/team-player2-sm@2x.webp 2x"
+                                type="image/webp">
+
+                            <source media="(max-width: 767px)"
+                                srcset="./images/team/team-player2-sm.jpg 1x, ./images/team/team-player2-sm@2x.jpg 2x"
+                                type="image/jpg">
+                            <img src="./images/team/team-player2-sm.jpg" alt="Ольга-Репина" width="450" height="460" />
+                        </picture>
+                        <!-- <img src="./images/team/team-player(1).jpg" alt="Ольга-Репина" width="270" height="460" /> -->
                         <div class="team-member-description">
                             <h3 class="team-member-title">Ольга Репина</h3>
                             <p class="team-member-position" lang="eu">Frontend Developer</p>
@@ -191,8 +312,36 @@
                             </ul>
                         </div>
                     </li>
-                    <li class="team-list-item">
-                        <img src="./images/team/team-player(2).jpg" alt="Николай-Тарасов" width="270" height="260" />
+                    <li class="team-list-item card-set__item">
+                        <picture>
+
+                            <source media="(min-width: 1200px)"
+                                srcset="./images/team/team-player3-lr.webp 1x, ./images/team/team-player3-lr@2x.webp 2x"
+                                type="image/webp">
+
+                            <source media="(min-width: 1200px)"
+                                srcset="./images/team/team-player3-lr.jpg 1x, ./images/team/team-player3-lr@2x.jpg 2x"
+                                type="image/jpg">
+
+                            <source media="(min-width: 768px)"
+                                srcset="./images/team/team-player3-md.webp, ./images/team/team-player3-md@2x.webp 2x"
+                                type="image/webp">
+
+                            <source media="(min-width: 768px)"
+                                srcset="./images/team/team-player3-md.jpg, ./images/team/team-player3-md@2x.jpg 2x"
+                                type="image/jpg">
+
+                            <source media="(max-width: 767px)"
+                                srcset="./images/team/team-player3-sm.webp 1x, ./images/team/team-player3-sm@2x.webp 2x"
+                                type="image/webp">
+
+                            <source media="(max-width: 767px)"
+                                srcset="./images/team/team-player3-sm.jpg 1x, ./images/team/team-player3-sm@2x.jpg 2x"
+                                type="image/jpg">
+                            <img src="./images/team/team-player3-sm.jpg" alt="Николай-Тарасов" width="450"
+                                height="460" />
+                        </picture>
+                        <!-- <img src="./images/team/team-player(2).jpg" alt="Николай-Тарасов" width="270" height="260" /> -->
                         <div class="team-member-description">
                             <h3 class="team-member-title">Николай Тарасов</h3>
                             <p class="team-member-position" lang="eu">Marketing</p>
@@ -232,8 +381,36 @@
                             </ul>
                         </div>
                     </li>
-                    <li class="team-list-item">
-                        <img src="./images/team/team-player(3).jpg" alt="Михаил-Ермаков" width="270" height="260" />
+                    <li class="team-list-item card-set__item">
+                        <picture>
+
+                            <source media="(min-width: 1200px)"
+                                srcset="./images/team/team-player4-lr.webp 1x, ./images/team/team-player4-lr@2x.webp 2x"
+                                type="image/webp">
+
+                            <source media="(min-width: 1200px)"
+                                srcset="./images/team/team-player4-lr.jpg 1x, ./images/team/team-player4-lr@2x.jpg 2x"
+                                type="image/jpg">
+
+                            <source media="(min-width: 768px)"
+                                srcset="./images/team/team-player4-md.webp, ./images/team/team-player4-md@2x.webp 2x"
+                                type="image/webp">
+
+                            <source media="(min-width: 768px)"
+                                srcset="./images/team/team-player4-md.jpg, ./images/team/team-player4-md@2x.jpg 2x"
+                                type="image/jpg">
+
+                            <source media="(max-width: 767px)"
+                                srcset="./images/team/team-player4-sm.webp 1x, ./images/team/team-player4-sm@2x.webp 2x"
+                                type="image/webp">
+
+                            <source media="(max-width: 767px)"
+                                srcset="./images/team/team-player4-sm.jpg 1x, ./images/team/team-player4-sm@2x.jpg 2x"
+                                type="image/jpg">
+                            <img src="./images/team/team-player4-sm.jpg" alt="Николай-Тарасов" width="450"
+                                height="460" />
+                        </picture>
+                        <!-- <img src="./images/team/team-player(3).jpg" alt="Михаил-Ермаков" width="270" height="260" /> -->
                         <div class="team-member-description">
                             <h3 class="team-member-title">Михаил Ермаков</h3>
                             <p class="team-member-position" lang="eu">UI Designer</p>
@@ -276,11 +453,12 @@
                 </ul>
             </div>
         </section>
+        <!-- Секция Our-client -->
         <section class="section">
             <div class="container">
                 <h2 class="section-title">Постоянные клиенты</h2>
-                <ul class="list our-clients">
-                    <li class="our-clients-item">
+                <ul class="list our-clients card-set">
+                    <li class="our-clients-item card-set__item">
                         <a class="our-clients-link link" href="#" target="_blank" rel="noopener no-referrer"
                             aria-label="YA & CO">
                             <svg class="our-clients-icon" width="106px" height="60px">
@@ -288,7 +466,7 @@
                             </svg>
                         </a>
                     </li>
-                    <li class="our-clients-item">
+                    <li class="our-clients-item card-set__item">
                         <a class="our-clients-link link" href="#" target="_blank" rel="noopener no-referrer"
                             aria-label="Company Tagline Here">
                             <svg class="our-clients-icon" width="106px" height="60px">
@@ -296,7 +474,7 @@
                             </svg>
                         </a>
                     </li>
-                    <li class="our-clients-item">
+                    <li class="our-clients-item card-set__item">
                         <a class="our-clients-link link" href="#" target="_blank" rel="noopener no-referrer"
                             aria-label="Company">
                             <svg class="our-clients-icon" width="106px" height="60px">
@@ -304,7 +482,7 @@
                             </svg>
                         </a>
                     </li>
-                    <li class="our-clients-item">
+                    <li class="our-clients-item card-set__item">
                         <a class="our-clients-link link" href="#" target="_blank" rel="noopener no-referrer"
                             aria-label="Foster Peters">
                             <svg class="our-clients-icon" width="106px" height="60px">
@@ -312,7 +490,7 @@
                             </svg>
                         </a>
                     </li>
-                    <li class="our-clients-item">
+                    <li class="our-clients-item card-set__item">
                         <a class="our-clients-link link" href="#" target="_blank" rel="noopener no-referrer"
                             aria-label="Brand">
                             <svg class="our-clients-icon" width="106px" height="60px">
@@ -320,7 +498,7 @@
                             </svg>
                         </a>
                     </li>
-                    <li class="our-clients-item">
+                    <li class="our-clients-item card-set__item">
                         <a class="our-clients-link link" href="#" target="_blank" rel="noopener no-referrer"
                             aria-label="Company Tag Line">
                             <svg class="our-clients-icon" width="106px" height="60px">
@@ -336,60 +514,63 @@
     <!-- Секция Footer -->
     <footer class="page-footer">
         <div class="container footer-container">
-            <div class="footer-adress">
-                <a class="logo link" href="./index.html">
-                    Web<span class="logo__accent-footer">Studio</span>
-                </a>
-                <address class="address">
-                    <ul class="footer-list list">
-                        <li class="footer-list-item"><a class="footer-list-address-link link"
-                                href="https://goo.gl/maps/Rm4vWPJoZRs2Vfyq5" target="_blank"
-                                rel="noopener nofollow">Киев, пр-т Леси Украинки, 26</a></li>
-                        <li class="footer-list-item"><a class="footer-list-link link"
-                                href="mailto:info@devstudio.com">info@devstudio.com</a></li>
-                        <li class="footer-list-item"><a class="footer-list-link link" href="tel:+380961111111">+38 096
-                                111 11
-                                11</a>
+            <div class="footer-wrapper">
+                <div class="footer-adress">
+                    <a class="logo link logo-footer" href="./index.html">
+                        Web<span class="logo__accent-footer">Studio</span>
+                    </a>
+                    <address class="address">
+                        <ul class="footer-list list">
+                            <li class="footer-list-item"><a class="footer-list-address-link link"
+                                    href="https://goo.gl/maps/Rm4vWPJoZRs2Vfyq5" target="_blank"
+                                    rel="noopener nofollow">Киев, пр-т Леси Украинки, 26</a></li>
+                            <li class="footer-list-item"><a class="footer-list-link link"
+                                    href="mailto:info@devstudio.com">info@devstudio.com</a></li>
+                            <li class="footer-list-item"><a class="footer-list-link link" href="tel:+380961111111">+38
+                                    096
+                                    111 11
+                                    11</a>
+                            </li>
+                        </ul>
+                    </address>
+                </div>
+                <div class="footer-social-link link">
+                    <p class="footer-social-slogan"><strong>присоединяйтесь</strong></p>
+                    <ul class="list social-media">
+                        <li class="social-media-item">
+                            <a class="social-media-link footer-media-link link" href="#" target="_blank"
+                                rel="noopener no-referrer" aria-label="instagram">
+                                <svg class="social-media-icon-footer" width="20px" height="20px">
+                                    <use href="./images/icons.svg#icon-instagram"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="social-media-item">
+                            <a class="social-media-link footer-media-link link" href="#" target="_blank"
+                                rel="noopener no-referrer" aria-label="twitter">
+                                <svg class="social-media-icon-footer" width="20px" height="20px">
+                                    <use href="./images/icons.svg#icon-twitter"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="social-media-item">
+                            <a class="social-media-link footer-media-link link" href="#" target="_blank"
+                                rel="noopener no-referrer" aria-label="facebook">
+                                <svg class="social-media-icon-footer" width="20px" height="20px">
+                                    <use href="./images/icons.svg#icon-facebook"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="social-media-item">
+                            <a class="social-media-link footer-media-link link" href="#" target="_blank"
+                                rel="noopener no-referrer" aria-label="linkedin">
+                                <svg class="social-media-icon-footer" width="20px" height="20px">
+                                    <use href="./images/icons.svg#icon-linkedin"></use>
+                                </svg>
+                            </a>
                         </li>
                     </ul>
-                </address>
-            </div>
-            <div class="footer-social-link link">
-                <p class="footer-social-slogan"><strong>присоединяйтесь</strong></p>
-                <ul class="list social-media">
-                    <li class="social-media-item">
-                        <a class="social-media-link footer-media-link link" href="#" target="_blank"
-                            rel="noopener no-referrer" aria-label="instagram">
-                            <svg class="social-media-icon-footer" width="20px" height="20px">
-                                <use href="./images/icons.svg#icon-instagram"></use>
-                            </svg>
-                        </a>
-                    </li>
-                    <li class="social-media-item">
-                        <a class="social-media-link footer-media-link link" href="#" target="_blank"
-                            rel="noopener no-referrer" aria-label="twitter">
-                            <svg class="social-media-icon-footer" width="20px" height="20px">
-                                <use href="./images/icons.svg#icon-twitter"></use>
-                            </svg>
-                        </a>
-                    </li>
-                    <li class="social-media-item">
-                        <a class="social-media-link footer-media-link link" href="#" target="_blank"
-                            rel="noopener no-referrer" aria-label="facebook">
-                            <svg class="social-media-icon-footer" width="20px" height="20px">
-                                <use href="./images/icons.svg#icon-facebook"></use>
-                            </svg>
-                        </a>
-                    </li>
-                    <li class="social-media-item">
-                        <a class="social-media-link footer-media-link link" href="#" target="_blank"
-                            rel="noopener no-referrer" aria-label="linkedin">
-                            <svg class="social-media-icon-footer" width="20px" height="20px">
-                                <use href="./images/icons.svg#icon-linkedin"></use>
-                            </svg>
-                        </a>
-                    </li>
-                </ul>
+                </div>
             </div>
             <div class="footer-subscribe">
                 <p class="footer-social-slogan"><strong>Подпишитесь на рассылку</strong></p>
@@ -475,6 +656,7 @@
     </div>
 
     <script src="./js/modal.js"></script>
+    <script src="./js/menu.js"></script>
 </body>
 
 </html>

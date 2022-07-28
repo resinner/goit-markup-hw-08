@@ -1,15 +1,30 @@
 /* Страница портфолио */
 .filter {
   display: flex;
-  justify-content: center;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
   list-style: none;
   padding: 0;
+  flex-wrap: wrap;
+
+
+
+  @media screen and (min-width: 768px) {
+    justify-content: center;
+  }
 }
 
-.filter__item:not(:last-child) {
-  margin-right: 8px;
+.filter__item {
+  @media screen and (max-width: 767px) {
+    &:nth-child(-n + 3) {
+      margin-bottom: 15px;
+    }
+  }
+
+  &:not(:last-child) {
+    margin-right: 8px;
+  }
 }
+
 
 .filter__button {
   font-weight: 500;
@@ -39,20 +54,25 @@
 .project-list {
   display: flex;
   flex-wrap: wrap;
-  margin-bottom: 50px;
+
 }
 
 .project-list__item {
   border: 1px solid var(--light-border);
-  flex-basis: 370px;
-  margin-bottom: 30px;
+  flex-basis: 450px;
+  gap: 30px;
 
-  &:not(:nth-child(3n)) {
-    margin-right: 30px;
+
+      --items: 1;
+
+  @media screen and (min-width: 768px) {
+    --items: 2;
+      flex-basis: 354px;
   }
 
-  &:nth-last-child(-n + 3) {
-    margin-bottom: 0;
+  @media screen and (min-width: 1200px) {
+    --items: 4;
+      flex-basis: 370px;
   }
 }
 

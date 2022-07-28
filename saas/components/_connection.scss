@@ -1,12 +1,24 @@
 .connection {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  width: 100%;
+  display: none;
+
+  @media screen and (min-width: 768px) {
+    display: block;
+  }
+
+  @media screen and (min-width: 1200px) {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+  }
 }
 
-.connection-item:not(:last-child) {
-  margin-right: 50px;
+.connection-item {
+  @media screen and (min-width: 1200px) {
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
+  }
 }
 
 .connection-link {
@@ -24,6 +36,11 @@
   &:focus {
     color: var(--dark-accent);
   }
+
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+
+      margin-bottom: 10px;}
+    
 }
 
 .connection-icon {

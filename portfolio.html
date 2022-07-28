@@ -12,7 +12,6 @@
         integrity="sha512-wpPYUAdjBVSE4KJnH1VR1HeZfpl1ub8YT/NKx4PuQ5NmX2tKuGu6U/JRp5y+Y8XG2tV+wKQpNHVUX03MfMFn9Q=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./css/main.min.css">
-    <link rel="stylesheet" href="./css/style.css">
 
 </head>
 
@@ -21,11 +20,62 @@
     <header class="section-header">
         <div class="container header-container">
             <div class="logoWrapper">
-                <a class=" logo link" href="./index.html">
+                <a class=" logo link" href="./index.html" aria-label="Логотип WebStudio">
                     Web<span class="logo__accent-header">Studio</span>
                 </a>
             </div>
-            <nav>
+            <!-- Мобільне меню -->
+            <button class="mobile-menu-btn" type="button" data-menu-button>
+                <svg class="mobile-menu-icon" width="24px" height="16px">
+                    <use class="mobile-menu-close" href="./images/icons.svg#icon-close-menu"></use>
+                    <use class="mobile-menu-burger" href="./images/icons.svg#icon-menu"></use>
+                </svg>
+            </button>
+
+            <div class="mobile-menu" data-menu>
+                <ul class="mobile-menu-nav list">
+                    <li class="mobile-menu-nav-item">
+                        <a class="link" href="./index.html" target="_blank" rel="noopener no-referrer">Студия</a>
+                    </li>
+                    <li class="mobile-menu-nav-item">
+                        <a class="link mobile-menu-nav-current" href="./portfolio.html" target="_blank"
+                            rel="noopener no-referrer">Портфолио</a>
+                    </li>
+                    <li class="mobile-menu-nav-item">
+                        <a class="link" href="#" target="_blank" rel="noopener no-referrer">Контакты</a>
+                    </li>
+                </ul>
+                <ul class="mobile-menu-contacts list">
+                    <li class="mobile-menu-contacts-item">
+                        <a class="mobile-menu-contacts-link accent link" href="tel:+380961111111" target="_blank"
+                            rel="noopener no-referrer">+38 096 111 11 11</a>
+                    </li>
+                    <li class="mobile-menu-contacts-item">
+                        <a class="mobile-menu-contacts-link link" href="mailto:info@devstudio.com" target="_blank"
+                            rel="noopener no-referrer">info@devstudio.com</a>
+                    </li>
+                </ul>
+                <ul class="mobile-menu-socials list">
+                    <li class="mobile-menu-social-item">
+                        <a class="mobile-menu-social-link link" href="#" target="_blank"
+                            rel="noopener no-referrer">Instagram</a>
+                    </li>
+                    <li class="mobile-menu-social-item">
+                        <a class="mobile-menu-social-link link" href="#" target="_blank"
+                            rel="noopener no-referrer">Twitter</a>
+                    </li>
+                    <li class="mobile-menu-social-item">
+                        <a class="mobile-menu-social-link link" href="#" target="_blank"
+                            rel="noopener no-referrer">Facebook</a>
+                    </li>
+                    <li class="mobile-menu-social-item">
+                        <a class="mobile-menu-social-link link" href="#" target="_blank"
+                            rel="noopener no-referrer">LinkedIn</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- Навігація сайту -->
+            <nav class="nav">
                 <ul class="flex-position list">
                     <li class="nav-link link"><a class="" href="./index.html">Студия</a></li>
                     <li class="nav-link link nav-link-active"><a href="./portfolio.html">Портфолио</a></li>
@@ -46,6 +96,7 @@
                         </svg> +38 096 111 11 11</a>
                 </li>
             </ul>
+        </div>
         </div>
     </header>
     <main>
@@ -71,11 +122,38 @@
                         <button class="filter__button" type="button">Маркетинг</button>
                     </li>
                 </ul>
-                <ul class="project-list  list">
-                    <li class="project-list__item">
+
+                <ul class="project-list  list card-set">
+                    <li class="project-list__item card-set__item">
                         <a class="project-list__link" href="#" target="_blank" rel="noopener no-referrer"
                             aria-label="Веб-сайт Технокряк">
-                            <img src="./images/portfolio/technocrack.jpg" alt="Технокряк" width="370" height="294">
+                            <picture>
+                                <source media="(min-width: 1200px)"
+                                    srcset="./images/portfolio/w/img1-lr.webp 1x, ./images/portfolio/w/img1-lr@2x.webp 2x"
+                                    type="image/webp">
+
+                                <source media="(min-width: 1200px)"
+                                    srcset="./images/portfolio/w/img1-lr.jpg 1x, ./images/portfolio/w/img1-lr@2x.jpg 2x"
+                                    type="image/jpg">
+
+                                <source media="(min-width: 768px)"
+                                    srcset="./images/portfolio/w/img1-md.webp, ./images/portfolio/w/img1-md@2x.webp 2x"
+                                    type="image/webp>
+
+                                <source media=" (min-width: 768px)"
+                                    srcset="./images/portfolio/w/img1-md.jpg, ./images/portfolio/w/img1-md@2x.jpg 2x"
+                                    type="image/jpg">
+
+                                <source media="(max-width: 767px)"
+                                    srcset="./images/portfolio/w/img1-sm.webp 1x, ./images/portfolio/w/img1-sm@2x.webp 2x"
+                                    type="image/webp">
+
+                                <source media="(max-width: 767px)"
+                                    srcset="./images/portfolio/w/img1-sm.jpg 1x, ./images/portfolio/w/img1-sm@2x.jpg 2x"
+                                    type="image/jpg">
+                                <img src="./images/portfolio/w/img1-sm.jpg" alt="Технокряк" width="450" height="294" />
+                            </picture>
+                            <!-- <img src="./images/portfolio/technocrack.jpg" alt="Технокряк" width="450" height="294"> -->
                             <div class="portfolio-overlay">
                                 <p class="portfolio-desc">
                                     Ресурс предлагает комплексные предложения с разным уровнем функционала и сервисов.
@@ -90,11 +168,39 @@
                             </div>
                         </a>
                     </li>
-                    <li class="project-list__item">
+                    <li class="project-list__item card-set__item">
                         <a class="project-list__link" href="#" target="_blank" rel="noopener no-referrer"
                             aria-label="Дизайн Постер New Orlean vs Golden Star">
-                            <img src="./images/portfolio/new-orlean-vs-golden-star.jpg"
-                                alt="Постер-New-Orlean-vs-Golden-Star" width="370" height="294">
+
+                            <picture>
+                                <source media="(min-width: 1200px)"
+                                    srcset="./images/portfolio/w/img2-lr.webp 1x, ./images/portfolio/w/img2-lr@2x.webp 2x"
+                                    type="image/webp">
+
+                                <source media="(min-width: 1200px)"
+                                    srcset="./images/portfolio/w/img2-lr.jpg 1x, ./images/portfolio/w/img2-lr@2x.jpg 2x"
+                                    type="image/jpg">
+
+                                <source media="(min-width: 768px)"
+                                    srcset="./images/portfolio/w/img2-md.webp, ./images/portfolio/w/img2-md@2x.webp 2x"
+                                    type="image/webp>
+
+                                <source media=" (min-width: 768px)"
+                                    srcset="./images/portfolio/w/img2-md.jpg, ./images/portfolio/w/img2-md@2x.jpg 2x"
+                                    type="image/jpg">
+
+                                <source media="(max-width: 767px)"
+                                    srcset="./images/portfolio/w/img2-sm.webp 1x, ./images/portfolio/w/img2-sm@2x.webp 2x"
+                                    type="image/webp">
+
+                                <source media="(max-width: 767px)"
+                                    srcset="./images/portfolio/w/img2-sm.jpg 1x, ./images/portfolio/w/img2-sm@2x.jpg 2x"
+                                    type="image/jpg">
+                                <img src="./images/portfolio/w/img2-sm.jpg" alt="Технокряк" width="450" height="294" />
+                            </picture>
+                            <!-- <img src="./images/portfolio/new-orlean-vs-golden-star.jpg"
+                                alt="Постер-New-Orlean-vs-Golden-Star" width="370" height="294"> -->
+
                             <div class="portfolio-overlay">
                                 <p class="portfolio-desc">
                                     Ресурс предлагает комплексные предложения с разным уровнем функционала и сервисов.
@@ -109,10 +215,38 @@
                             </div>
                         </a>
                     </li>
-                    <li class="project-list__item">
+                    <li class="project-list__item card-set__item">
                         <a class="project-list__link" href="#" target="_blank" rel="noopener no-referrer"
                             aria-label="Приложение Ресторан Seafood">
-                            <img src="./images/portfolio/seafood.jpg" alt="Ресторан-Seafood" width="370" height="294">
+
+                            <picture>
+                                <source media="(min-width: 1200px)"
+                                    srcset="./images/portfolio/w/img3-lr.webp 1x, ./images/portfolio/w/img3-lr@2x.webp 2x"
+                                    type="image/webp">
+
+                                <source media="(min-width: 1200px)"
+                                    srcset="./images/portfolio/w/img3-lr.jpg 1x, ./images/portfolio/w/img3-lr@2x.jpg 2x"
+                                    type="image/jpg">
+
+                                <source media="(min-width: 768px)"
+                                    srcset="./images/portfolio/w/img3-md.webp, ./images/portfolio/w/img3-md@2x.webp 2x"
+                                    type="image/webp>
+                            
+                                                            <source media=" (min-width: 768px)"
+                                    srcset="./images/portfolio/w/img3-md.jpg, ./images/portfolio/w/img3-md@2x.jpg 2x"
+                                    type="image/jpg">
+
+                                <source media="(max-width: 767px)"
+                                    srcset="./images/portfolio/w/img3-sm.webp 1x, ./images/portfolio/w/img3-sm@2x.webp 2x"
+                                    type="image/webp">
+
+                                <source media="(max-width: 767px)"
+                                    srcset="./images/portfolio/w/img3-sm.jpg 1x, ./images/portfolio/w/img3-sm@2x.jpg 2x"
+                                    type="image/jpg">
+                                <img src="./images/portfolio/w/img3-sm.jpg" alt="Технокряк" width="450" height="294" />
+                            </picture>
+                            <!-- <img src="./images/portfolio/seafood.jpg" alt="Ресторан-Seafood" width="370" height="294"> -->
+
                             <div class="portfolio-overlay">
                                 <p class="portfolio-desc">
                                     Ресурс предлагает комплексные предложения с разным уровнем функционала и сервисов.
@@ -127,10 +261,38 @@
                             </div>
                         </a>
                     </li>
-                    <li class="project-list__item">
+                    <li class="project-list__item card-set__item">
                         <a class="project-list__link" href="#" target="_blank" rel="noopener no-referrer"
                             aria-label="Маркетинг Проект Prime">
-                            <img src="./images/portfolio/prime.jpg" alt="Проект-Prime" width="370" height="294">
+
+                            <picture>
+                                <source media="(min-width: 1200px)"
+                                    srcset="./images/portfolio/w/img4-lr.webp 1x, ./images/portfolio/w/img4-lr@2x.webp 2x"
+                                    type="image/webp">
+
+                                <source media="(min-width: 1200px)"
+                                    srcset="./images/portfolio/w/img4-lr.jpg 1x, ./images/portfolio/w/img4-lr@2x.jpg 2x"
+                                    type="image/jpg">
+
+                                <source media="(min-width: 768px)"
+                                    srcset="./images/portfolio/w/img4-md.webp, ./images/portfolio/w/img4-md@2x.webp 2x"
+                                    type="image/webp>
+
+                                <source media=" (min-width: 768px)"
+                                    srcset="./images/portfolio/w/img4-md.jpg, ./images/portfolio/w/img4-md@2x.jpg 2x"
+                                    type="image/jpg">
+
+                                <source media="(max-width: 767px)"
+                                    srcset="./images/portfolio/w/img4-sm.webp 1x, ./images/portfolio/w/img4-sm@2x.webp 2x"
+                                    type="image/webp">
+
+                                <source media="(max-width: 767px)"
+                                    srcset="./images/portfolio/w/img4-sm.jpg 1x, ./images/portfolio/w/img4-sm@2x.jpg 2x"
+                                    type="image/jpg">
+                                <img src="./images/portfolio/w/img4-sm.jpg" alt="Технокряк" width="450" height="294" />
+                            </picture>
+                            <!-- <img src="./images/portfolio/prime.jpg" alt="Проект-Prime" width="370" height="294"> -->
+
                             <div class="portfolio-overlay">
                                 <p class="portfolio-desc">
                                     Ресурс предлагает комплексные предложения с разным уровнем функционала и сервисов.
@@ -145,10 +307,38 @@
                             </div>
                         </a>
                     </li>
-                    <li class="project-list__item">
+                    <li class="project-list__item card-set__item">
                         <a class="project-list__link" href="#" target="_blank" rel="noopener no-referrer"
                             aria-label="Приложение Проект Boxes">
-                            <img src="./images/portfolio/boxes.jpg" alt="Проект-Boxes" width="370" height="294">
+
+                            <picture>
+                                <source media="(min-width: 1200px)"
+                                    srcset="./images/portfolio/w/img5-lr.webp 1x, ./images/portfolio/w/img5-lr@2x.webp 2x"
+                                    type="image/webp">
+
+                                <source media="(min-width: 1200px)"
+                                    srcset="./images/portfolio/w/img5-lr.jpg 1x, ./images/portfolio/w/img5-lr@2x.jpg 2x"
+                                    type="image/jpg">
+
+                                <source media="(min-width: 768px)"
+                                    srcset="./images/portfolio/w/img5-md.webp, ./images/portfolio/w/img5-md@2x.webp 2x"
+                                    type="image/webp>
+
+                                <source media=" (min-width: 768px)"
+                                    srcset="./images/portfolio/w/img5-md.jpg, ./images/portfolio/w/img5-md@2x.jpg 2x"
+                                    type="image/jpg">
+
+                                <source media="(max-width: 767px)"
+                                    srcset="./images/portfolio/w/img5-sm.webp 1x, ./images/portfolio/w/img5-sm@2x.webp 2x"
+                                    type="image/webp">
+
+                                <source media="(max-width: 767px)"
+                                    srcset="./images/portfolio/w/img5-sm.jpg 1x, ./images/portfolio/w/img5-sm@2x.jpg 2x"
+                                    type="image/jpg">
+                                <img src="./images/portfolio/w/img5-sm.jpg" alt="Технокряк" width="450" height="294" />
+                            </picture>
+                            <!-- <img src="./images/portfolio/boxes.jpg" alt="Проект-Boxes" width="370" height="294"> -->
+
                             <div class="portfolio-overlay">
                                 <p class="portfolio-desc">
                                     Ресурс предлагает комплексные предложения с разным уровнем функционала и сервисов.
@@ -163,11 +353,38 @@
                             </div>
                         </a>
                     </li>
-                    <li class="project-list__item">
+                    <li class="project-list__item card-set__item">
                         <a class="project-list__link" href="#" target="_blank" rel="noopener no-referrer"
                             aria-label="Веб-сайт Inspiration has no Borders">
-                            <img src="./images/portfolio/inspiration-has-no-borders.jpg"
-                                alt="Inspiration-has-no-Borders" width="370" height="294">
+                            <picture>
+                                <source media="(min-width: 1200px)"
+                                    srcset="./images/portfolio/w/img6-lr.webp 1x, ./images/portfolio/w/img6-lr@2x.webp 2x"
+                                    type="image/webp">
+
+                                <source media="(min-width: 1200px)"
+                                    srcset="./images/portfolio/w/img6-lr.jpg 1x, ./images/portfolio/w/img6-lr@2x.jpg 2x"
+                                    type="image/jpg">
+
+                                <source media="(min-width: 768px)"
+                                    srcset="./images/portfolio/w/img6-md.webp, ./images/portfolio/w/img6-md@2x.webp 2x"
+                                    type="image/webp>
+                            
+                                                            <source media=" (min-width: 768px)"
+                                    srcset="./images/portfolio/w/img6-md.jpg, ./images/portfolio/w/img6-md@2x.jpg 2x"
+                                    type="image/jpg">
+
+                                <source media="(max-width: 767px)"
+                                    srcset="./images/portfolio/w/img6-sm.webp 1x, ./images/portfolio/w/img6-sm@2x.webp 2x"
+                                    type="image/webp">
+
+                                <source media="(max-width: 767px)"
+                                    srcset="./images/portfolio/w/img6-sm.jpg 1x, ./images/portfolio/w/img6-sm@2x.jpg 2x"
+                                    type="image/jpg">
+                                <img src="./images/portfolio/w/img6-sm.jpg" alt="Технокряк" width="450" height="294" />
+                            </picture>
+                            <!-- <img src="./images/portfolio/inspiration-has-no-borders.jpg"
+                                alt="Inspiration-has-no-Borders" width="370" height="294"> -->
+
                             <div class="portfolio-overlay">
                                 <p class="portfolio-desc">
                                     Ресурс предлагает комплексные предложения с разным уровнем функционала и сервисов.
@@ -182,11 +399,39 @@
                             </div>
                         </a>
                     </li>
-                    <li class="project-list__item">
+                    <li class="project-list__item card-set__item">
                         <a class="project-list__link" href="#" target="_blank" rel="noopener no-referrer"
                             aria-label="Дизайн Издание Limited Edition">
-                            <img src="./images/portfolio/limited-edition.jpg" alt="Издание-Limited-Edition" width="370"
-                                height="294">
+
+                            <picture>
+                                <source media="(min-width: 1200px)"
+                                    srcset="./images/portfolio/w/img7-lr.webp 1x, ./images/portfolio/w/img7-lr@2x.webp 2x"
+                                    type="image/webp">
+
+                                <source media="(min-width: 1200px)"
+                                    srcset="./images/portfolio/w/img7-lr.jpg 1x, ./images/portfolio/w/img7-lr@2x.jpg 2x"
+                                    type="image/jpg">
+
+                                <source media="(min-width: 768px)"
+                                    srcset="./images/portfolio/w/img7-md.webp, ./images/portfolio/w/img7-md@2x.webp 2x"
+                                    type="image/webp>
+
+                                <source media=" (min-width: 768px)"
+                                    srcset="./images/portfolio/w/img7-md.jpg, ./images/portfolio/w/img7-md@2x.jpg 2x"
+                                    type="image/jpg">
+
+                                <source media="(max-width: 767px)"
+                                    srcset="./images/portfolio/w/img7-sm.webp 1x, ./images/portfolio/w/img7-sm@2x.webp 2x"
+                                    type="image/webp">
+
+                                <source media="(max-width: 767px)"
+                                    srcset="./images/portfolio/w/img7-sm.jpg 1x, ./images/portfolio/w/img7-sm@2x.jpg 2x"
+                                    type="image/jpg">
+                                <img src="./images/portfolio/w/img7-sm.jpg" alt="Технокряк" width="450" height="294" />
+                            </picture>
+                            <!-- <img src="./images/portfolio/limited-edition.jpg" alt="Издание-Limited-Edition" width="370"
+                                height="294"> -->
+
                             <div class="portfolio-overlay">
                                 <p class="portfolio-desc">
                                     Ресурс предлагает комплексные предложения с разным уровнем функционала и сервисов.
@@ -201,10 +446,38 @@
                             </div>
                         </a>
                     </li>
-                    <li class="project-list__item">
+                    <li class="project-list__item card-set__item">
                         <a class="project-list__link" href="#" target="_blank" rel="noopener no-referrer"
                             aria-label="Маркетинг Проект LAB">
-                            <img src="./images/portfolio/lab.jpg" alt="Проект-LAB" width="370" height="294">
+
+                            <picture>
+                                <source media="(min-width: 1200px)"
+                                    srcset="./images/portfolio/w/img8-lr.webp 1x, ./images/portfolio/w/img8-lr@2x.webp 2x"
+                                    type="image/webp">
+
+                                <source media="(min-width: 1200px)"
+                                    srcset="./images/portfolio/w/img8-lr.jpg 1x, ./images/portfolio/w/img8-lr@2x.jpg 2x"
+                                    type="image/jpg">
+
+                                <source media="(min-width: 768px)"
+                                    srcset="./images/portfolio/w/img8-md.webp, ./images/portfolio/w/img8-md@2x.webp 2x"
+                                    type="image/webp>
+
+                                <source media=" (min-width: 768px)"
+                                    srcset="./images/portfolio/w/img8-md.jpg, ./images/portfolio/w/img8-md@2x.jpg 2x"
+                                    type="image/jpg">
+
+                                <source media="(max-width: 767px)"
+                                    srcset="./images/portfolio/w/img8-sm.webp 1x, ./images/portfolio/w/img8-sm@2x.webp 2x"
+                                    type="image/webp">
+
+                                <source media="(max-width: 767px)"
+                                    srcset="./images/portfolio/w/img8-sm.jpg 1x, ./images/portfolio/w/img8-sm@2x.jpg 2x"
+                                    type="image/jpg">
+                                <img src="./images/portfolio/w/img8-sm.jpg" alt="Технокряк" width="450" height="294" />
+                            </picture>
+                            <!-- <img src="./images/portfolio/lab.jpg" alt="Проект-LAB" width="370" height="294"> -->
+
                             <div class="portfolio-overlay">
                                 <p class="portfolio-desc">
                                     Ресурс предлагает комплексные предложения с разным уровнем функционала и сервисов.
@@ -219,11 +492,39 @@
                             </div>
                         </a>
                     </li>
-                    <li class="project-list__item">
+                    <li class="project-list__item card-set__item">
                         <a class="project-list__link" href="#" target="_blank" rel="noopener no-referrer"
                             aria-label="Приложение Growing Business">
-                            <img src="./images/portfolio/growing-business.jpg" alt="Growing-Business" width="370"
-                                height="294">
+
+                            <picture>
+                                <source media="(min-width: 1200px)"
+                                    srcset="./images/portfolio/w/img9-lr.webp 1x, ./images/portfolio/w/img9-lr@2x.webp 2x"
+                                    type="image/webp">
+
+                                <source media="(min-width: 1200px)"
+                                    srcset="./images/portfolio/w/img9-lr.jpg 1x, ./images/portfolio/w/img9-lr@2x.jpg 2x"
+                                    type="image/jpg">
+
+                                <source media="(min-width: 768px)"
+                                    srcset="./images/portfolio/w/img9-md.webp, ./images/portfolio/w/img9-md@2x.webp 2x"
+                                    type="image/webp>
+                            
+                              <source media=" (min-width: 768px)"
+                                    srcset="./images/portfolio/w/img9-md.jpg, ./images/portfolio/w/img9-md@2x.jpg 2x"
+                                    type="image/jpg">
+
+                                <source media="(max-width: 767px)"
+                                    srcset="./images/portfolio/w/img9-sm.webp 1x, ./images/portfolio/w/img9-sm@2x.webp 2x"
+                                    type="image/webp">
+
+                                <source media="(max-width: 767px)"
+                                    srcset="./images/portfolio/w/img9-sm.jpg 1x, ./images/portfolio/w/img9-sm@2x.jpg 2x"
+                                    type="image/jpg">
+                                <img src="./images/portfolio/w/img9-sm.jpg" alt="Технокряк" width="450" height="294" />
+                            </picture>
+                            <!-- <img src="./images/portfolio/growing-business.jpg" alt="Growing-Business" width="370"
+                                height="294"> -->
+
                             <div class="portfolio-overlay">
                                 <p class="portfolio-desc">
                                     Ресурс предлагает комплексные предложения с разным уровнем функционала и сервисов.
@@ -242,12 +543,12 @@
             </div>
         </section>
     </main>
-    
+
     <!-- Секция Footer -->
     <footer class="page-footer">
         <div class="container footer-container">
             <div class="footer-adress">
-                <a class="logo link" href="./index.html">
+                <a class="logo link logo-footer" href="./index.html">
                     Web<span class="logo__accent-footer">Studio</span>
                 </a>
                 <address class="address">
@@ -318,6 +619,7 @@
         </div>
     </footer>
 
+    <script src="./js/menu.js"></script>
 </body>
 
 </html>

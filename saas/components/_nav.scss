@@ -1,3 +1,12 @@
+.nav {
+display: none;
+
+@media screen and (min-width: 768px) {
+  display: block;
+  margin-right: 60px;
+}
+}
+
 .nav-link a:hover,
 .nav-link a:focus,
 .footer-list-link:hover,
@@ -19,7 +28,10 @@
 }
 
 li.nav-link:not(:last-child) {
+
+   @media screen and (min-width: 768px) {
   margin-right: 50px;
+   }
 }
 
 .nav-link-active a {
@@ -33,8 +45,6 @@ li.nav-link:not(:last-child) {
   bottom: 0;
   left: 0;
 
-  transform: translateY(32px);
-
   width: 100%;
   height: 4px;
   display: inline-block;
@@ -42,4 +52,12 @@ li.nav-link:not(:last-child) {
 
   background-color: var(--dark-accent);
   border-radius: 2px;
+
+  @media screen and (min-width: 768px) {
+  transform: translateY(34px);
+   }
+
+  @media screen and (min-width: 1200px) {
+  transform: translateY(24px);
+   }
 }

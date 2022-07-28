@@ -5,14 +5,19 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  padding: 40px;
+  padding: 15px;
   background-color: rgba(0, 0, 0, 0.2);
 
   opacity: 1;
   visibility: visible;
   pointer-events: initial;
+  z-index: 1000;
 
   transition: translate var(--anim1), opacity var(--anim1), visibility var(--anim1);
+
+  @media screen and (min-width: 1200px) {
+    padding: 40px;
+  }
   
   &.is-hidden {
     visibility: hidden;
