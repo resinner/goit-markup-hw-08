@@ -161,7 +161,6 @@ address {
   height: 100vh;
   padding: 48px 40px;
   background-color: var(--main);
-  z-index: 100;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -169,10 +168,9 @@ address {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-transition: -webkit-transform 500ms;
-  transition: -webkit-transform 500ms;
-  transition: transform 500ms;
-  transition: transform 500ms, -webkit-transform 500ms;
+  opacity: 0;
+  z-index: 100;
+  transition: opacity 700ms var(--anim1), visibility 700ms var(--anim1), transform 1600ms var(--anim1), -webkit-transform 1700ms var(--anim1);
 }
 @media screen and (min-width: 768px) {
   .mobile-menu {
@@ -180,8 +178,10 @@ address {
   }
 }
 .mobile-menu.is-open {
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
+  opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  transition: opacity 1800ms cubic-bezier(0.4, 0, 0.2, 1), visibility 1800ms cubic-bezier(0.4, 0, 0.2, 1), transform 1600ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 1600ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .mobile-menu-nav {
@@ -557,7 +557,8 @@ html::-webkit-scrollbar-thumb:hover {
 
 .subscribe-form-input {
   padding: 15px 16px;
-  width: 450px;
+  margin-bottom: 20px;
+  min-width: 290px;
   height: 50px;
   font-family: "Roboto", "sans-serif";
   font-style: normal;
@@ -579,7 +580,7 @@ html::-webkit-scrollbar-thumb:hover {
 }
 @media screen and (min-width: 480px) and (max-width: 767px) {
   .subscribe-form-input {
-    margin-bottom: 20px;
+    width: 450px;
   }
   .subscribe-form-input label {
     display: inline-block;
@@ -588,6 +589,7 @@ html::-webkit-scrollbar-thumb:hover {
 @media screen and (min-width: 768px) and (max-width: 1199px) {
   .subscribe-form-input {
     margin-bottom: 20px;
+    width: 450px;
   }
   .subscribe-form-input label {
     display: block;
@@ -597,6 +599,7 @@ html::-webkit-scrollbar-thumb:hover {
   .subscribe-form-input {
     width: 358px;
     margin-right: 12px;
+    margin-bottom: 0;
   }
 }
 
@@ -612,9 +615,8 @@ html::-webkit-scrollbar-thumb:hover {
   opacity: 1;
   visibility: visible;
   pointer-events: initial;
-  z-index: 1000;
-  -webkit-transition: translate var(--anim1), opacity var(--anim1), visibility var(--anim1);
-  transition: translate var(--anim1), opacity var(--anim1), visibility var(--anim1);
+  z-index: 90;
+  transition: opacity 700ms var(--anim1), visibility 700ms var(--anim1), transform 1600ms var(--anim1), -webkit-transform 1700ms var(--anim1);
 }
 @media screen and (min-width: 1200px) {
   .backdrop {
@@ -625,6 +627,9 @@ html::-webkit-scrollbar-thumb:hover {
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
+  -webkit-transform: scale(0) rotateX(77deg);
+          transform: scale(0) rotateX(77deg);
+  transition: opacity 700ms var(--anim1), visibility 700ms var(--anim1), transform 1600ms var(--anim1), -webkit-transform 1700ms var(--anim1);
 }
 
 .close-btn {
@@ -758,10 +763,10 @@ html::-webkit-scrollbar-thumb:hover {
   -webkit-transform: translateY(101%);
           transform: translateY(101%);
   overflow: hidden;
-  -webkit-transition: -webkit-transform var(--anim1);
-  transition: -webkit-transform var(--anim1);
-  transition: transform var(--anim1);
-  transition: transform var(--anim1), -webkit-transform var(--anim1);
+  -webkit-transition: -webkit-transform 450ms var(--anim1);
+  transition: -webkit-transform 450ms var(--anim1);
+  transition: transform 450ms var(--anim1);
+  transition: transform 450ms var(--anim1), -webkit-transform 450ms var(--anim1);
 }
 
 .section-header {
@@ -838,7 +843,6 @@ html::-webkit-scrollbar-thumb:hover {
 }
 
 .hero-title {
-  width: 360px;
   margin: 0 auto;
   font-weight: 900;
   font-size: 26px;
@@ -847,6 +851,11 @@ html::-webkit-scrollbar-thumb:hover {
   text-transform: uppercase;
   text-align: center;
   color: var(--main);
+}
+@media screen and (min-width: 480px) {
+  .hero-title {
+    width: 360px;
+  }
 }
 @media screen and (min-width: 1200px) {
   .hero-title {
@@ -1089,7 +1098,7 @@ html::-webkit-scrollbar-thumb:hover {
   display: flex;
 }
 
-@media screen and (min-width: 480px) and (max-width: 767px) {
+@media screen and (min-width: 320px) and (max-width: 767px) {
   .footer-container {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1139,7 +1148,7 @@ html::-webkit-scrollbar-thumb:hover {
   }
 }
 
-@media screen and (min-width: 480px) and (max-width: 767px) {
+@media screen and (min-width: 320px) and (max-width: 767px) {
   .logo-footer {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1150,7 +1159,7 @@ html::-webkit-scrollbar-thumb:hover {
   }
 }
 
-@media screen and (min-width: 480px) and (max-width: 767px) {
+@media screen and (min-width: 320px) and (max-width: 767px) {
   .footer-adress {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1183,7 +1192,7 @@ html::-webkit-scrollbar-thumb:hover {
   margin-bottom: 60px;
 }
 
-@media screen and (min-width: 480px) and (max-width: 767px) {
+@media screen and (min-width: 320px) and (max-width: 767px) {
   .footer-list-item {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1241,7 +1250,7 @@ html::-webkit-scrollbar-thumb:hover {
 .footer-social-link {
   margin-right: auto;
 }
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 320px) {
   .footer-social-link {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1267,7 +1276,7 @@ html::-webkit-scrollbar-thumb:hover {
   }
 }
 
-@media screen and (min-width: 480px) and (max-width: 767px) {
+@media screen and (min-width: 320px) and (max-width: 767px) {
   .footer-subscribe {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1288,7 +1297,7 @@ html::-webkit-scrollbar-thumb:hover {
   }
 }
 
-@media screen and (min-width: 480px) and (max-width: 767px) {
+@media screen and (min-width: 320px) and (max-width: 767px) {
   form[name=subscribe-form] {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1365,7 +1374,6 @@ html::-webkit-scrollbar-thumb:hover {
   }
 }
 .modal__title {
-  width: 370px;
   height: 60px;
   font-family: "Roboto", "sans-serif";
   font-style: normal;

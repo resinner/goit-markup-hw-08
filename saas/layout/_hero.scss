@@ -44,7 +44,6 @@
 }
 
 .hero-title {
-  width: 360px;
   margin: 0 auto;
   font-weight: 900;
   font-size: 26px;
@@ -53,6 +52,10 @@
   text-transform: uppercase;
   text-align: center;
   color: var(--main);
+
+@media screen and (min-width: 480px) {
+  width: 360px;
+  }
 
   @media screen and (min-width: 1200px) {
     width: 696px;

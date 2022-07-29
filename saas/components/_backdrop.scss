@@ -11,17 +11,23 @@
   opacity: 1;
   visibility: visible;
   pointer-events: initial;
-  z-index: 1000;
+  z-index: 90;
 
-  transition: translate var(--anim1), opacity var(--anim1), visibility var(--anim1);
+  transition: opacity 700ms var(--anim1), visibility 700ms var(--anim1),
+    transform 1600ms var(--anim1), -webkit-transform 1700ms var(--anim1);
 
   @media screen and (min-width: 1200px) {
     padding: 40px;
   }
-  
+
   &.is-hidden {
     visibility: hidden;
     opacity: 0;
     pointer-events: none;
+
+    transform: scale(0) rotateX(77deg);
+
+    transition: opacity 700ms var(--anim1), visibility 700ms var(--anim1),
+      transform 1600ms var(--anim1), -webkit-transform 1700ms var(--anim1);
   }
 }
