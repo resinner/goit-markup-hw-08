@@ -96,6 +96,9 @@
   padding: 20px 24px;
   width: 100%;
   // background-color: var(--main);
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    min-height: 146px;
+  }
 }
 
 .project-title {
@@ -112,7 +115,6 @@
   line-height: 1.88;
   color: var(--second-text-color);
 }
-
 
 .portfolio-desc {
   font-family: 'Roboto';

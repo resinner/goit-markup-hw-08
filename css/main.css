@@ -67,7 +67,7 @@ p {
 
 img {
   display: block;
-  width: 100%;
+  max-width: 100%;
   height: auto;
 }
 
@@ -732,8 +732,12 @@ html::-webkit-scrollbar-thumb:hover {
   color: var(--dark-accent);
 }
 
+.portfolio-thumb {
+  position: relative;
+  overflow: hidden;
+}
+
 .portfolio-overlay {
-  padding: 63px 24px;
   position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -751,18 +755,13 @@ html::-webkit-scrollbar-thumb:hover {
   -webkit-backdrop-filter: blur(3px);
           backdrop-filter: blur(3px);
   background-color: rgba(33, 150, 243, 0.9);
-  -webkit-transform: translateY(100%);
-          transform: translateY(100%);
+  -webkit-transform: translateY(101%);
+          transform: translateY(101%);
   overflow: hidden;
   -webkit-transition: -webkit-transform var(--anim1);
   transition: -webkit-transform var(--anim1);
   transition: transform var(--anim1);
   transition: transform var(--anim1), -webkit-transform var(--anim1);
-}
-
-.portfolio-thumb {
-  position: relative;
-  overflow: hidden;
 }
 
 .section-header {
@@ -1641,6 +1640,11 @@ html::-webkit-scrollbar-thumb:hover {
 .list-item-description {
   padding: 20px 24px;
   width: 100%;
+}
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .list-item-description {
+    min-height: 146px;
+  }
 }
 
 .project-title {
