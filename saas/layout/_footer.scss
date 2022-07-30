@@ -54,6 +54,7 @@
   @media screen and (min-width: 1200px) {
     margin-right: 70px;
     justify-content: center;
+    height: 132px;
   }
 }
 
@@ -111,7 +112,7 @@
 .footer-social-link {
   margin-right: auto;
 
-  @media screen and (min-width: 320px) {
+  @media screen and (min-width: 320px) and (max-width: 1199px) {
     @include column-center;
     margin-bottom: 60px;
   }

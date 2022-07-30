@@ -170,7 +170,7 @@ address {
           flex-direction: column;
   opacity: 0;
   z-index: 100;
-  transition: opacity 700ms var(--anim1), visibility 700ms var(--anim1), transform 1600ms var(--anim1), -webkit-transform 1700ms var(--anim1);
+  transition: opacity 700ms var(--anim1), visibility 700ms var(--anim1), transform 600ms var(--anim1), -webkit-transform 700ms var(--anim1);
 }
 @media screen and (min-width: 768px) {
   .mobile-menu {
@@ -181,7 +181,7 @@ address {
   opacity: 1;
   -webkit-transform: scale(1);
           transform: scale(1);
-  transition: opacity 1800ms cubic-bezier(0.4, 0, 0.2, 1), visibility 1800ms cubic-bezier(0.4, 0, 0.2, 1), transform 1600ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 1600ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 800ms cubic-bezier(0.4, 0, 0.2, 1), visibility 800ms cubic-bezier(0.4, 0, 0.2, 1), transform 600ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .mobile-menu-nav {
@@ -415,8 +415,8 @@ a.mobile-menu-nav-current {
 }
 @media screen and (min-width: 1200px) {
   .nav-link-active a::after {
-    -webkit-transform: translateY(24px);
-            transform: translateY(24px);
+    -webkit-transform: translateY(32px);
+            transform: translateY(32px);
   }
 }
 
@@ -615,8 +615,8 @@ html::-webkit-scrollbar-thumb:hover {
   opacity: 1;
   visibility: visible;
   pointer-events: initial;
-  z-index: 90;
-  transition: opacity 700ms var(--anim1), visibility 700ms var(--anim1), transform 1600ms var(--anim1), -webkit-transform 1700ms var(--anim1);
+  z-index: 10000;
+  transition: opacity 700ms var(--anim1), visibility 700ms var(--anim1), transform 600ms var(--anim1), -webkit-transform 700ms var(--anim1);
 }
 @media screen and (min-width: 1200px) {
   .backdrop {
@@ -629,7 +629,7 @@ html::-webkit-scrollbar-thumb:hover {
   pointer-events: none;
   -webkit-transform: scale(0) rotateX(77deg);
           transform: scale(0) rotateX(77deg);
-  transition: opacity 700ms var(--anim1), visibility 700ms var(--anim1), transform 1600ms var(--anim1), -webkit-transform 1700ms var(--anim1);
+  transition: opacity 700ms var(--anim1), visibility 700ms var(--anim1), transform 600ms var(--anim1), -webkit-transform 700ms var(--anim1);
 }
 
 .close-btn {
@@ -763,10 +763,10 @@ html::-webkit-scrollbar-thumb:hover {
   -webkit-transform: translateY(101%);
           transform: translateY(101%);
   overflow: hidden;
-  -webkit-transition: -webkit-transform 450ms var(--anim1);
-  transition: -webkit-transform 450ms var(--anim1);
-  transition: transform 450ms var(--anim1);
-  transition: transform 450ms var(--anim1), -webkit-transform 450ms var(--anim1);
+  -webkit-transition: -webkit-transform 250ms var(--anim1);
+  transition: -webkit-transform 250ms var(--anim1);
+  transition: transform 250ms var(--anim1);
+  transition: transform 250ms var(--anim1), -webkit-transform 250ms var(--anim1);
 }
 
 .section-header {
@@ -780,7 +780,17 @@ html::-webkit-scrollbar-thumb:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 16px 15px;
+  padding: 10px 15px;
+}
+@media screen and (min-width: 768px) {
+  .header-container {
+    padding: 14px 15px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .header-container {
+    padding: 24px 15px;
+  }
 }
 
 .header {
@@ -797,13 +807,19 @@ html::-webkit-scrollbar-thumb:hover {
 
 .hero {
   background-color: var(--dark-background);
-  padding: 200px 0;
+  padding-top: 118px;
+  padding-bottom: 118px;
+}
+@media screen and (min-width: 1200px) {
+  .hero {
+    padding: 200px 0;
+  }
 }
 
 .hero-overlay {
   max-width: 1600px;
-  height: 600px;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
   background-color: var(--dark-background);
   background-repeat: no-repeat;
   background-position: center;
@@ -843,6 +859,7 @@ html::-webkit-scrollbar-thumb:hover {
 }
 
 .hero-title {
+  width: 360px;
   margin: 0 auto;
   font-weight: 900;
   font-size: 26px;
@@ -851,11 +868,6 @@ html::-webkit-scrollbar-thumb:hover {
   text-transform: uppercase;
   text-align: center;
   color: var(--main);
-}
-@media screen and (min-width: 480px) {
-  .hero-title {
-    width: 360px;
-  }
 }
 @media screen and (min-width: 1200px) {
   .hero-title {
@@ -890,7 +902,7 @@ html::-webkit-scrollbar-thumb:hover {
   text-transform: uppercase;
   color: var(--dark-text);
 }
-@media screen and (max-width: 480px) {
+@media screen and (min-width: 320px) and (max-width: 767px) {
   .features__title {
     text-align: center;
   }
@@ -1053,6 +1065,10 @@ html::-webkit-scrollbar-thumb:hover {
   border-radius: 4px;
   --items: 2;
 }
+.our-clients-item:hover, .our-clients-item:focus {
+  color: var(--dark-accent);
+  border-color: var(--dark-accent);
+}
 @media screen and (min-width: 768px) {
   .our-clients-item {
     --items: 3;
@@ -1184,6 +1200,7 @@ html::-webkit-scrollbar-thumb:hover {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    height: 132px;
   }
 }
 
@@ -1250,7 +1267,7 @@ html::-webkit-scrollbar-thumb:hover {
 .footer-social-link {
   margin-right: auto;
 }
-@media screen and (min-width: 320px) {
+@media screen and (min-width: 320px) and (max-width: 1199px) {
   .footer-social-link {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1374,7 +1391,6 @@ html::-webkit-scrollbar-thumb:hover {
   }
 }
 .modal__title {
-  height: 60px;
   font-family: "Roboto", "sans-serif";
   font-style: normal;
   font-weight: 700;

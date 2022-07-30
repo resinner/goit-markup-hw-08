@@ -11,10 +11,10 @@
   opacity: 1;
   visibility: visible;
   pointer-events: initial;
-  z-index: 90;
+  z-index: 10000;
 
   transition: opacity 700ms var(--anim1), visibility 700ms var(--anim1),
-    transform 1600ms var(--anim1), -webkit-transform 1700ms var(--anim1);
+    transform 600ms var(--anim1), -webkit-transform 700ms var(--anim1);
 
   @media screen and (min-width: 1200px) {
     padding: 40px;
@@ -28,6 +28,6 @@
     transform: scale(0) rotateX(77deg);
 
     transition: opacity 700ms var(--anim1), visibility 700ms var(--anim1),
-      transform 1600ms var(--anim1), -webkit-transform 1700ms var(--anim1);
+      transform 600ms var(--anim1), -webkit-transform 700ms var(--anim1);
   }
 }
