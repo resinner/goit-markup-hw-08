@@ -859,7 +859,7 @@ html::-webkit-scrollbar-thumb:hover {
 }
 
 .hero-title {
-  width: 360px;
+  width: 300px;
   margin: 0 auto;
   font-weight: 900;
   font-size: 26px;
@@ -868,6 +868,11 @@ html::-webkit-scrollbar-thumb:hover {
   text-transform: uppercase;
   text-align: center;
   color: var(--main);
+}
+@media screen and (min-width: 480px) {
+  .hero-title {
+    width: 360px;
+  }
 }
 @media screen and (min-width: 1200px) {
   .hero-title {
